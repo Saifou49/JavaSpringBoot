@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>The List of the students</title>
+    <link rel="stylesheet" th:href="@{studentList.css}">
+
+</head>
+<body>
+<h1>The List of the Students</h1><br><br>
+
+<!-- <form action="/delete" method="post">
+    <button id="deleteButton" type="delete">Delete all Students</button> <br><br>
+
+</form> -->
+
+<table id="table">
+    <tr>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Name</th>
+    </tr>
+
+    <tr th:each="student:${students}" > <!-- this is a for loop to store the datas of students in student -->
+
+        <td th:text="${student.id}"></td> <!-- For every object i take the id-->
+
+        <td th:text="${student.email}"></td> <!-- For every object i take the email-->
+
+        <td th:text="${student.name}"></td> <!-- For every object i take the name-->
+    </tr>
+
+</table>
+
+
+
+</body>
+</html>

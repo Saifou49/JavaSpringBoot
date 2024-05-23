@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>The Registration App</title>
+    <link rel="stylesheet" th:href="@{webPage.css}">
+</head>
+<body>
+<div id="mainContainer">
+    <h1>
+        The Registration App 
+    </h1>
+    <form id="formForButtons"  action="save" method="post" >
+        <fieldset>
+            <legend id="legendText">The registration area</legend>
+            
+            <div class="inputDivs">
+                <label id="nameID" for="name" >Name:</label>
+                <input type="text" id="name" name="name"></input>
+            </div>
+
+            <div class="inputDivs">
+                <label id="emailID" for="email" >Email:</label>
+                <input type="email" id="email" name="email"></input>
+            </div>
+
+            <div id="buttonDIv">
+                <button id="registerButton" type="submit" > Register </button>
+                <button  id="showTheListButton" type="submit" formaction="list" >Show the List</button>
+            </div>
+            
+
+        </fieldset>
+    </form>
+</div>
+
+<script>
+    const inputField = document.querySelectorAll('input');
+
+    inputField.forEach(oneInput => {
+
+        oneInput.addEventListener('input', ()=> {
+            oneInput.classList.add('typingClass');
+        });
+
+        oneInput.addEventListener('blur', ()=> {
+            oneInput.classList.remove('typingClass');
+        });
+        
+    });
+
+
+
+
+</script>
+</body>
+</html>
